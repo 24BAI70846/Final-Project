@@ -1,0 +1,363 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.auth-container h1 {
+  color: white;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.auth-box {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  width: 350px;
+}
+
+.auth-box h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #667eea;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.auth-box button {
+  width: 100%;
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.auth-box button:hover {
+  background: #5a6fd6;
+}
+
+.auth-box p {
+  text-align: center;
+  margin-top: 15px;
+  color: #667eea;
+  cursor: pointer;
+}
+
+.dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.dashboard header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dashboard header h1 {
+  font-size: 1.3rem;
+  color: #667eea;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info input[type="date"] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.user-info button {
+  padding: 8px 15px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.calorie-summary {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.circle-progress {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.circle-progress svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.bg-circle {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 10;
+}
+
+.progress-circle {
+  fill: none;
+  stroke: #667eea;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.5s ease;
+}
+
+.circle-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.calorie-num {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+.calorie-label {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.summary-stats {
+  display: flex;
+  gap: 30px;
+  flex: 1;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.stat-value.burned {
+  color: #e74c3c;
+}
+
+.stat-value.negative {
+  color: #e74c3c;
+}
+
+.meals-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.meal-section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.meal-section h3 {
+  margin-bottom: 15px;
+  color: #667eea;
+  text-transform: capitalize;
+}
+
+.food-list {
+  min-height: 100px;
+  margin-bottom: 15px;
+}
+
+.food-item {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.food-name {
+  font-weight: 500;
+  display: block;
+}
+
+.food-cal {
+  color: #667eea;
+  font-size: 0.9rem;
+}
+
+.food.macros {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.add-food-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-food-form input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.add-food-form button {
+  padding: 8px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.activities-section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.activities-section h3 {
+  margin-bottom: 15px;
+  color: #667eea;
+}
+
+.activity-list {
+  min-height: 60px;
+  margin-bottom: 15px;
+}
+
+.activity-item {
+  background: #f8f9fa;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.activity-name {
+  font-weight: 500;
+}
+
+.activity-duration {
+  color: #888;
+}
+
+.activity-cal {
+  color: #e74c3c;
+}
+
+.add-activity-form {
+  display: flex;
+  gap: 10px;
+}
+
+.add-activity-form input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.add-activity-form button {
+  padding: 10px 20px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .meals-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .calorie-summary {
+    flex-direction: column;
+  }
+  
+  .dashboard header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
